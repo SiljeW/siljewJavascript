@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RainyDays - Home</title>
+        <meta name="description" content="The home page to Rainydays jacket website."/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="CSS/styles.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/28f0a6b7dc.js" crossorigin="anonymous"></script>
+        <script type="module" src="home.mjs"></script>
+    </head>
+    <body>
+        <header>
+            <div class="image-header">
+                <img src="images/Header_photo5.jpg" alt="Man running over bridge" class="responsive-image"/>
+                <div class="headerlogo-overlay">
+                    <a href="index.html">
+                        <img src="images/RainyDays_Logo2.png" alt="Rainy days logo"/>
+                    </a>
+                </div>
+            </div>
+            <div class="header-icons">
+                <ul>
+                    <li><a href="shoppingcart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="navbar">
+                <input type="checkbox" id="toggle-menu">
+                <label for="toggle-menu" class="toggle-button">&#9776;</label>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="../about/index.html">ABOUT</a></li>
+                        <li><a href="../products/index.html">PRODUCTS</a></li>
+                        <li><a href="../contact/index.html">CONTACT</a></li>
+                        <li><a href="../checkout/index.html">CHECKOUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="image-top">
+                <img src="images/Header_photo4.jpg" alt="Man running on bridge" class="responsive-image2"/>
+            </div>
+            <div class="productheader">Our Most Popular Jackets</div>
+            <div class="items-list" id="display-container">
+            </div>
+            <div class="browse-text">Browse By Activity</div>
+            <section class="browse-activity">
+                <div class="browse1">
+                    <img src="images/Kayak.jpg" alt="Kayak"/>
+                    <h4>KAYAK</h4>
+                </div>
+                <div class="browse2">
+                    <img src="images/Skiing_man.jpg" alt="Skiing man"/>
+                    <h4>SKI</h4>
+                </div>
+                <div class="browse3">
+                    <img src="images/Hiking_people.jpg" alt="Hiking people"/>
+                    <h4>HIKE</h4>
+                </div>
+                <div class="browse4">
+                    <img src="images/Tenting_woman.jpg" alt="Tenting woman"/>
+                    <h4>CAMPING</h4>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-left">
+                <h5>Follow us</h5>
+                <div class="footer-left">
+                    <p class="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span class="text">INSTAGRAM</span>
+                    </p>
+                    <p class="facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span class="text">FACEBOOK</span>
+                    </p>
+                    <p class="linkedin">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span class="text">LINKEDIN</span>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-center">
+                <div class="footer-logo"><img src="images/RainyDays_Logo.png" alt="Rainy Days logo"></div>
+                <p>&copy; 2023 Rainydays</p>
+            </div>
+            <div class="footer-right">
+                <h5>Contact us</h5>
+                <div class="footer-icons-right">
+                    <p class="phone">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="text">+47 908 00 809</span>
+                    </p>
+                    <p class="email">
+                        <i class="fa-solid fa-at"></i>
+                        <span class="text">contact@rainydays.com</span>
+                    </p>
+                    <p class="address">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="text">0871 OSLO</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

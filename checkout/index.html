@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RainyDays - Checkout</title>
+        <meta name="description" content="The checkout page to Rainydays jacket website."/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="../CSS/checkout.css"/>
+        <script src="https://kit.fontawesome.com/28f0a6b7dc.js" crossorigin="anonymous"></script>
+        <script type="module" src="../checkout/index.mjs"></script>
+    </head>
+    <body>
+        <header>
+            <div class="image-header">
+                <img src="../images/Header_photo5.jpg" alt="Man running over bridge" class="responsive-image"/>
+                <div class="headerlogo-overlay">
+                    <a href="../index.html">
+                        <img src="../images/RainyDays_Logo2.png" alt="Rainy days logo"/>
+                    </a>
+                </div>
+                <div class="header-icons">
+                    <div class="cart-icon">
+                        <a href="shoppingcart.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <input type="checkbox" id="toggle-menu">
+                <label for="toggle-menu" class="toggle-button">&#9776;</label>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="../index.html">HOME</a></li>
+                        <li><a href="../about/index.html">ABOUT</a></li>
+                        <li><a href="/products/index.html">PRODUCTS</a></li>
+                        <li><a href="../contact/index.html">CONTACT</a></li>
+                        <li><a href="../checkout/index.html">CHECKOUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <h1>Checkout</h1>
+            <button id="clear-cart">Clear cart</button>
+            <div class="cart-counter-wrapper">
+                <div id="cart-counter" class="cart-counter-container">1</div>
+            </div>
+            <div id="cart-items-display"></div>
+            <div class="payment">
+                <div class="details">
+                    <form>
+                        <fieldset>
+                            <legend>Personal Details</legend>
+                            <div class="personal-container">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" class="form_input"/>
+                                <label for="surname">Surname:</label>
+                                <input type="text" id="surname" name="surname" class="form_input"/>
+                                <label for="number">Mobile Number:</label>
+                                <input type="tel" id="number" name="number" class="form_input"/>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form_input"/>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="address">
+                    <form>
+                        <fieldset>
+                            <legend>Address</legend>
+                            <div class="address-container">
+                                <label for="country">Country:</label>
+                                <input type="text" id="country" name="country" class="form_input"/>
+                                <label for="street">Street:</label>
+                                <input type="text" id="street" name="street" class="form_input"/>
+                                <label for="zip">Zip code:</label>
+                                <input type="text" id="zip" name="number" class="form_input"/>
+                                <label for="city">City:</label>
+                                <input type="text" id="city" name="city" class="form_input"/>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="payment-info">
+                    <form>
+                        <fieldset>
+                            <legend>Payment Details</legend>
+                            <div class="payment-container">
+                                <label for="name">Cardholders Name:</label>
+                                <input type="text" id="name" name="name" class="form_input"/>
+                                <label for="cardnumber">Card Number:</label>
+                                <input type="text" id="cardnumber" name="number" class="form_input"/>
+                                <label for="date">Expiry Date:</label>
+                                <input type="date" id="date" name="date" class="form_input"/>
+                                <label for="cvc">CVC:</label>
+                                <input type="text" id="cvc" name="cvc" class="form_input"/>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <a href="../checkoutsuccess.html" class="purchase-button">Complete Purchase</a>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-left">
+                <h5>Follow us</h5>
+                <div class="footer-left">
+                    <p class="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span class="text">INSTAGRAM</span>
+                    </p>
+                    <p class="facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span class="text">FACEBOOK</span>
+                    </p>
+                    <p class="linkedin">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span class="text">LINKEDIN</span>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-center">
+                <div class="footer-logo"><img src="../images/RainyDays_Logo.png" alt="Rainy Days logo"></div>
+                <p>&copy; 2023 Rainydays</p>
+            </div>
+            <div class="footer-right">
+                <h5>Contact us</h5>
+                <div class="footer-icons-right">
+                    <p class="phone">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="text">+47 908 00 809</span>
+                    </p>
+                    <p class="email">
+                        <i class="fa-solid fa-at"></i>
+                        <span class="text">contact@rainydays.com</span>
+                    </p>
+                    <p class="address">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="text">0871 OSLO</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
