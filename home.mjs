@@ -19,6 +19,10 @@ function generateJacketHtml(jacket) {
     const jacketContainer = document.createElement('div');
     jacketContainer.classList.add('jacket-container');
 
+    jacketContainer.addEventListener('click', () => {
+        window.location.href = `/products/index.html`;
+    });
+
     const jacketTitle = document.createElement('h3');
     jacketTitle.textContent = jacket.title;
 

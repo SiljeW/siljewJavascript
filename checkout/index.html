@@ -17,13 +17,6 @@
                         <img src="../images/RainyDays_Logo2.png" alt="Rainy days logo"/>
                     </a>
                 </div>
-                <div class="header-icons">
-                    <div class="cart-icon">
-                        <a href="shoppingcart.html">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
             <div class="navbar">
                 <input type="checkbox" id="toggle-menu">
@@ -41,9 +34,12 @@
         </header>
         <main>
             <h1>Checkout</h1>
-            <button id="clear-cart">Clear cart</button>
-            <div class="cart-counter-wrapper">
-                <div id="cart-counter" class="cart-counter-container">1</div>
+            <div class="cart-checkout">
+                <button id="clear-cart"><i class="fa-regular fa-trash-can"></i>Clear cart</button>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div class="cart-counter-wrapper">
+                    <div id="cart-counter" class="cart-counter-container">1</div>
+                </div>
             </div>
             <div id="cart-items-display"></div>
             <div class="payment">

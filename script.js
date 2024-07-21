@@ -11,21 +11,37 @@ let chosenGender = '';
 
 maleGenderButton.addEventListener('click', () => {
     chosenGender = 'Male';
+    showLoader();
     renderHomePage();
+    hideLoader();
 });
 femaleGenderButton.addEventListener('click', () => {
     chosenGender = 'Female';
+    showLoader();
     renderHomePage();
+    hideLoader();
 });
 genderClearButton.addEventListener('click', () => {
     chosenGender = '';
+    showLoader();
     renderHomePage();
+    hideLoader();
 });
 
 const clearCartButton = document.getElementById('clear-cart');
 clearCartButton.addEventListener('click', () => {
+    showLoader();
     clearCart();
+    location.reload();
 })
+
+function showLoader() {
+    document.getElementById('page-loader').style.display = 'block';
+}
+
+function hideLoader() {
+    document.getElementById('page-loader').style.display = 'none';
+}
 
 function createCart() {
     const cart = localStorage.getItem('cart');
@@ -36,7 +52,6 @@ function createCart() {
 
 
 function generateJacketHtml(jacket) {
-    //return jacket html
     const jacketWrapper = document.createElement('div');
     jacketWrapper.classList.add('jacket-wrapper');
     
@@ -59,7 +74,7 @@ function generateJacketHtml(jacket) {
     const jacketPrice = document.createElement('div');
     jacketPrice.textContent = jacket.price;
 
-    const jacketDescription = document.createElement('div');
+    const jacketDescription = document.createElement('p');
     jacketDescription.textContent = jacket.description;
 
     const jacketDiscountedPrice = document.createElement('div');
@@ -68,9 +83,11 @@ function generateJacketHtml(jacket) {
     const jacketBuyButton = document.createElement('button');
     jacketBuyButton.textContent = 'Buy';
     jacketBuyButton.classList.add('jacket-buy-button');
-    jacketBuyButton.addEventListener('click', () => {
+    jacketBuyButton.addEventListener('click', (event) => {
+        event.stopPropagation();
         addToCart(jacket);
-    })
+        location.reload();
+    });
 
     const jacketDetails = document.createElement('div');
     jacketDetails.classList.add('jacket-details');
@@ -109,7 +126,42 @@ function showJacketDetails(jacket) {
     const detailView = document.getElementById('modalDetail');
     const closeBtn = document.querySelector('.modal .close');
 
-    detailView.innerHTML = 'jacketDetails';
+    detailView.innerHTML = '';
+
+    const detailTitle = document.createElement('h2');
+    detailTitle.textContent = jacket.title;
+
+    const detailImage = document.createElement('img');
+    detailImage.src = jacket.image.url;
+    detailImage.alt = jacket.title;
+
+    const detailDescription = document.createElement('p');
+    detailDescription.textContent = jacket.description;
+
+    const detailPrice = document.createElement('p');
+    detailPrice.textContent = `Price: ${jacket.price}`;
+
+    const detailDiscountedPrice = document.createElement('p');
+    detailDiscountedPrice.textContent = `Discounted Price: ${jacket.discountedPrice}`;
+
+    const detailGender = document.createElement('p');
+    detailGender.textContent = `Gender: ${jacket.gender}`;
+
+    const detailSizes = document.createElement('p');
+    detailSizes.textContent = `Sizes: ${jacket.sizes.join(', ')}`;
+
+    const detailBaseColor = document.createElement('p');
+    detailBaseColor.textContent = `Base Color: ${jacket.baseColor}`;
+
+    const detailBuyButton = document.createElement('button');
+    detailBuyButton.textContent = 'Buy';
+    detailBuyButton.classList.add('jacket-buy-button');
+    detailBuyButton.addEventListener('click', () => {
+        addToCart(jacket);
+        location.reload();
+    });
+
+    detailView.append(detailTitle, detailImage, detailDescription, detailPrice, detailDiscountedPrice, detailGender, detailSizes, detailBaseColor, detailBuyButton);
 
     modal.style.display = "block";
 
@@ -136,15 +188,19 @@ function renderCheckoutPage() {
 }
 
 async function renderHomePage() {
+    showLoader();
     const responseData = await doFetch(API_JACKETS_URL);
     const jackets = responseData.data;
     displayJacketsList(jackets);
+    hideLoader();
 }
 
 async function main() {
+    showLoader();
     createCart();
     await renderHomePage();
     renderCheckoutPage();
+    hideLoader();
 }
 
 main();

@@ -36,10 +36,7 @@ header {
     color: #0a3641;
 }
 
-.fa-cart-shopping {
-    top: 20%;
-    color: #0a3641;
-}
+
 
 .fa-heart {
     top: 20%;
@@ -150,6 +147,24 @@ header .headerlogo-overlay {
 
 /* Main */
 
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -164,11 +179,95 @@ main {
 
 .page-title {
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 25%;
-    padding: 5%;
+    max-width: 50%;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1em;
+    margin-bottom: 0;
     color: #0a3641;
+}
+
+.cart-details {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.cart-line {
+    display: flex;
+    flex-direction: row;
+}
+
+.cart-counter-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+}
+
+#clear-cart {
+    font-size: 1em;
+    cursor: pointer;
+    padding: 0px 30px;
+    background-color: #fff;
+    border: none;
+    color: #0a3641;
+    font-weight: 600;
+}
+
+#clear-cart:hover {
+    text-decoration: underline;
+}
+
+#cart-counter {
+    font-size: 0.7em;
+    font-weight: 600;
+    height: 1em;
+    color: #fff;
+    background-color: #2A7036;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.fa-cart-shopping {
+    font-size: 1.2em;
+    color: #0a3641;
+    margin-right: 2px;
+    margin-top: 2px;
+}
+
+.fa-trash-can {
+    font-size: 1.2em;
+    color: #0a3641;
+    margin-right: 2px;
+    margin-top: 2px;
+}
+
+
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.fa-filter {
+    padding-right: 10px;
+    font-size: 1.7em;
+}
+
+#gender-male,
+#gender-female,
+#gender-clear {
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10px;
+    border: 0.5px solid #000;
 }
 
 .product-selection {
@@ -180,11 +279,16 @@ main {
     margin-bottom: 10%;
 }
 
+h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 #display-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    width: 100%;
+    width: 80%;
     text-align: center;
 }
 
@@ -193,29 +297,41 @@ main {
 }
 
 .jacket-container {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #0a3641;
-    height: auto;
-    padding: 20px;
+    height: 90%;
+    padding: 15px;
+    gap: 5px;
+    font-size: 0.9em;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .jacket-container img {
     width: 100%;
-    height: auto;
+    max-height: 40%;
+    object-fit: contain;
 }
 
 .jacket-container:hover{
-    box-shadow: 5px 5px 10px #000;
+    box-shadow: 2px 2px 6px #000;
+    cursor: pointer;
+}
+
+.jacket-container p {
+    text-align: left;
 }
 
 .jacket-buy-button {
     display: inline-block;
     font-weight: bolder;
+    width: 50%;
     color: #fff;
     background-color: #0a3641;
     border: none;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 3px 3px 6px #000;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -245,6 +361,36 @@ main {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    height: auto;
+}
+
+h2 {
+    align-self: center;
+}
+
+#modalDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#modalDetail img {
+    width: 50%;
+    height: 40%;
+    align-self: center;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+#modalDetail p {
+    width: 80%;
+    align-self: center;
+    margin-top: 0px;
+}
+
+#modalDetail .jacket-buy-button {
+    margin-top: 20px;
 }
 
 .close {

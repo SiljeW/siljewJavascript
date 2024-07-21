@@ -17,14 +17,6 @@
                         <img src="../images/RainyDays_Logo2.png" alt="Rainy days logo"/>
                     </a>
                 </div>
-                <div class="header-icons">
-                    <div class="cart-icon">
-                        <a href="shoppingcart.html">
-                            <i class="fa-solid fa-cart-shopping">
-                            </i>
-                        </a>
-                    </div>
-                </div>
             </div>
             <div class="navbar">
                 <input type="checkbox" id="toggle-menu">
@@ -41,17 +33,26 @@
             </div>
         </header>
         <main>
-            <h1 class="page-title">OUR PRODUCTS</h1>
-            <button id="clear-cart">
-                <i class="fa-regular fa-trash-can"></i>
-                Clear cart
-            </button>
-            <div class="cart-counter-wrapper">
-                <div id="cart-counter" class="cart-counter-container">1</div>
+            <div id="page-loader" class="loader" style="display: none;"></div>
+            <div class="cart-details">
+                <h1 class="page-title">/products</h1>
+                <div class="cart-line">
+                    <button id="clear-cart">
+                        <i class="fa-regular fa-trash-can"></i>
+                        Clear cart
+                    </button>
+                    <div class="cart-counter-wrapper">
+                        <a href="../checkout/index.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <div id="cart-counter" class="cart-counter-container">1</div>
+                    </div>
+                </div>
             </div>
-            <button id="gender-male">Mens</button>
-            <button id="gender-female">Womens</button>
-            <button id="gender-clear">Clear filter</button>
+            <div class="filter-container">
+                <i class="fa-solid fa-filter"></i>
+                <button id="gender-male">Mens</button>
+                <button id="gender-female">Womens</button>
+                <button id="gender-clear">Clear filter</button>
+            </div>
             <div class="items-list" id="display-container">
                 <div class="jacket-container">
                     <button class="jacket-buy-button">BUY</button>
